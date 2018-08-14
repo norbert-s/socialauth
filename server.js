@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.set('view engine', 'pug')
-// app.set('views','./views/pug')
+app.set('views','./views/pug')
 
 mongo.connect(process.env.DATABASE, (err, db) => {
     if(err) {
