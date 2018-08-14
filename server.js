@@ -4,7 +4,7 @@ const express     = require('express');
 const bodyParser  = require('body-parser');
 const fccTesting  = require('./freeCodeCamp/fcctesting.js');
 const session     = require('express-session');
-const mongo       = require('mongodb').MongoClient;
+const mongodb       = require('mongodb').MongoClient;
 const passport    = require('passport');
 const GitHubStrategy = require('passport-github').Strategy;
 const nodemon = require('nodemon');
@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'pug')
 app.set('views','./views/pug')
 
-mongo.connect(process.env.DATABASE, (err, db) => {
+mongodb.connect(process.env.DATABASE, (err, db) => {
     if(err) {
         console.log('Database error: ' + err);
     } else {
